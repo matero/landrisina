@@ -10,3 +10,25 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/buildtools/target/
+/modules/target/
+/modules/landrisina-core/target/
+target/
+
+# vim files
+*~
+*.swp
+
+# eclipse files
+/buildtools/.settings/
+/modules/.settings/
+/modules/landrisina-core/.settings/
+.settings/
+/buildtools/.project
+/modules/.project
+/modules/landrisina-core/.project
+.project
+/buildtools/.classpath
+/modules/.classpath
+/modules/landrisina-core/.classpath
+.classpath

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>matero</groupId>
+  <artifactId>landrisina</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>landrisina</name>
+  <url>https://github.com/matero/landrisina</url>
+
+  <licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+
+  <organization>
+    <name>Materoide</name>
+    <url>https://github.com/matero/</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>matero</id>
+      <name>Juanjo Gil</name>
+      <email>matero _at_ gmail _dot_ com</email>
+      <url>https://github.com/matero/</url>
+      <organization>Materoide</organization>
+      <organizationUrl>https://github.com/matero/</organizationUrl>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+        <role>mate cebator</role>
+        <role>kitchen cleaner</role>
+        <role>dad of the century ;)</role>
+      </roles>
+      <timezone>-4</timezone>
+    </developer>
+  </developers>
+
+  <issueManagement>
+    <url>https://github.com/matero/landrisina/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <scm>
+    <url>https://github.com/matero/landrisina</url>
+    <connection>scm:git:git://github.com/matero/landrisina.git</connection>
+    <developerConnection>scm:git:git@github.com:matero/landrisina.git</developerConnection>
+  </scm>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <modules>
+    <module>buildtools</module>
+    <module>modules</module>
+  </modules>
+</project>
