@@ -16,56 +16,32 @@
  * specific language governing permissions and limitations
  * under the License.
  ****************************************************************/
-package landrisina;
+package landrisina.lang;
 
-import java.util.LinkedList;
-import org.checkerframework.checker.nullness.qual.Nullable;
+import java.util.function.Consumer;
 
 /**
- * Simple class to ensure correct behavior of landrisina.
+ * 
  */
-public class Stack
+public class ThenValue<T>
 {
-  private final LinkedList<Object> data;
-
-  public Stack() {
-    this.data = new LinkedList<>();
+  public Then and(final String expectation,
+                  final Runnable validation) {
+    return andThen(expectation, validation);
   }
 
-  public void push(final @Nullable Object element) {
-    if (element == null) {
-      throw new NullPointerException("element");
-    }
-    this.data.push(element);
+  public Then andThen(final String expectation,
+                      final Runnable validation) {
+    return null;
   }
 
-  public @Nullable Object pop() {
-    if (isEmpty()) {
-      throw new IllegalStateException("stack is empty");
-    }
-    return this.data.pop();
+  public ThenValue<T> and(final String expectation,
+                          final Consumer<T> validation) {
+    return andThen(expectation, validation);
   }
 
-  public @Nullable Object peek() {
-    if (isEmpty()) {
-      throw new IllegalStateException("stack is empty");
-    }
-    return this.data.peek();
-  }
-
-  public boolean isEmpty() {
-    return this.data.isEmpty();
-  }
-
-  public int size() {
-    return data.size();
-  }
-
-  /**
-   * 
-   */
-  public void clear() {
-    // TODO Auto-generated method stub
-    
+  public ThenValue<T> andThen(final String expectation,
+                              final Consumer<T> validation) {
+    return null;
   }
 }

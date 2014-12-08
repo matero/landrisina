@@ -18,54 +18,27 @@
  ****************************************************************/
 package landrisina;
 
-import java.util.LinkedList;
-import org.checkerframework.checker.nullness.qual.Nullable;
-
 /**
- * Simple class to ensure correct behavior of landrisina.
+ * Checks that tags behaves as expected
  */
-public class Stack
+public class TagTest
 {
-  private final LinkedList<Object> data;
-
-  public Stack() {
-    this.data = new LinkedList<>();
+  public void test_when_traduced_to_string_it_should_prepend_tag_name_with_hash() {
+    assert "#tag".equals(new Tag("tag").toString()) : "it should be translated as '#tag'";
   }
 
-  public void push(final @Nullable Object element) {
-    if (element == null) {
-      throw new NullPointerException("element");
-    }
-    this.data.push(element);
+  public void test_tags_are_equivalent_when_they_have_the_same_value() {
+    Tag aTag = new Tag("tag");
+    Tag sameTag = new Tag("tag");
+    Tag differentTag = new Tag("differentTag");
+
+    assert aTag.equals(sameTag) : "#tag should be equal to #tag";
+    assert !aTag.equals(differentTag) : "#tag should no be equal to #differentTag";
   }
 
-  public @Nullable Object pop() {
-    if (isEmpty()) {
-      throw new IllegalStateException("stack is empty");
-    }
-    return this.data.pop();
-  }
-
-  public @Nullable Object peek() {
-    if (isEmpty()) {
-      throw new IllegalStateException("stack is empty");
-    }
-    return this.data.peek();
-  }
-
-  public boolean isEmpty() {
-    return this.data.isEmpty();
-  }
-
-  public int size() {
-    return data.size();
-  }
-
-  /**
-   * 
-   */
-  public void clear() {
-    // TODO Auto-generated method stub
-    
+  public void test_should_create_tag_only_the_first_time_it_is_accessed() {
+    Tag unit = Tag.of("unit");
+    assert unit == Tag.of("unit") : "the tag " + unit + " should not be created more than one time.";
+    assert Tag.of("test") == Tag.of("test") : "the tag #test should not be created more than one time.";
   }
 }
