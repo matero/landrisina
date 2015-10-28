@@ -15,11 +15,18 @@ limitations under the License.
 */
 package landrisina
 
-import kotlin.reflect.KProperty
+// user defined tags
+object user : Tag()
+object special : Tag()
 
-/**
- * Class of Delegating properties to obtain owners class names when no specific value is defined.
- */
-internal class OwnerClassName() {
-  operator fun getValue(thisRef: Any?, @Suppress("UNUSED_PARAMETER") property: KProperty<*>): String = thisRef!!.javaClass.simpleName
+class TagTest {
+  fun test_it_is_named_as_its_simple_class_name() {
+    for ((tag, expectedName) in mapOf(unit to "unit",
+                                      integration to "integration",
+                                      pending to "pending",
+                                      user to "user",
+                                      special to "special")) {
+      assert(tag.name == expectedName)
+    }
+  }
 }

@@ -15,11 +15,21 @@ limitations under the License.
 */
 package landrisina
 
-import kotlin.reflect.KProperty
+data class Topping(val name: String)
 
-/**
- * Class of Delegating properties to obtain owners class names when no specific value is defined.
- */
-internal class OwnerClassName() {
-  operator fun getValue(thisRef: Any?, @Suppress("UNUSED_PARAMETER") property: KProperty<*>): String = thisRef!!.javaClass.simpleName
+class Pizza {
+  private val toppings : MutableList<Topping> = linkedListOf()
+
+  fun addTopping(t: Topping) {
+    toppings.add(t)
+  }
+
+  fun topping(at: Int): Topping = toppings[at]
+
+  val toppingsCount: Int
+    get() = toppings.size
+
+  fun removeTopping(topping: Topping) {
+    toppings.remove(topping)
+  }
 }
